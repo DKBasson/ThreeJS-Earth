@@ -1,8 +1,8 @@
 {
   "scripts": {
     "build": "vite build",
-    "deploy": "npm run build && gh-pages -d dist"
-  },
+    "deploy": "gh-pages -d dist -r https://github.com/DKBasson/ThreeJS-Earth.git"
+  }, 
   "dependencies": {
     "ammo.js": "^0.0.10",
     "cannon-es": "^0.20.0",
