@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "vite-plugin-resolve": "^2.5.2"
   }
 }
