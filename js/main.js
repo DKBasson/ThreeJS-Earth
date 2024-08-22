@@ -26,7 +26,6 @@ const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
 groundMesh.rotation.x = -Math.PI / 2;
 groundMesh.receiveShadow = true;
 scene.add(groundMesh);
-
 const groundBody = new CANNON.Body({
     mass: 0,
     shape: new CANNON.Plane(),
