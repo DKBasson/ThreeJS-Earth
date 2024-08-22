@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as CANNON from 'cannon-es';
 
 const scene = new THREE.Scene();
@@ -15,7 +15,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 const world = new CANNON.World();
 world.gravity.set(0, -9.82, 0);
 
-const groundTexture = new THREE.TextureLoader().load('assets/heightmap/universe.jpg');
+const groundTexture = new THREE.TextureLoader().load('assets/images/universe.jpg');
 groundTexture.wrapS = THREE.RepeatWrapping;
 groundTexture.wrapT = THREE.RepeatWrapping;
 groundTexture.repeat.set(4, 4);
@@ -34,7 +34,6 @@ const groundBody = new CANNON.Body({
 groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
 world.addBody(groundBody);
 
-// Add invisible walls around the ground with collision
 const wallThickness = 1;
 const wallHeight = 10;
 
@@ -56,7 +55,6 @@ wallPositions.forEach((pos, index) => {
     world.addBody(wallBody);
 });
 
-// Create balls instead of boxes
 const ballGeometry = new THREE.SphereGeometry(1, 32, 32);
 const ballMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
 
@@ -76,7 +74,6 @@ for (let i = 0; i < 10; i++) {
     ballMesh.userData.physicsBody = ballBody;
 }
 
-// Create a sphere with Earth texture
 const mainBallRadius = 1;
 const mainBallShape = new CANNON.Sphere(mainBallRadius);
 const mainBallBody = new CANNON.Body({ mass: 5 });
@@ -86,7 +83,7 @@ mainBallBody.linearDamping = 0.1;
 mainBallBody.angularDamping = 0.1;
 world.addBody(mainBallBody);
 
-const mainBallTexture = new THREE.TextureLoader().load('assets/heightmap/earth.jpg');
+const mainBallTexture = new THREE.TextureLoader().load('assets/images/earth.jpg');
 const mainBallGeometry = new THREE.SphereGeometry(mainBallRadius, 32, 32);
 const mainBallMaterial = new THREE.MeshStandardMaterial({ map: mainBallTexture });
 const mainBallMesh = new THREE.Mesh(mainBallGeometry, mainBallMaterial);
