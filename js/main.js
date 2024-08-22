@@ -31,7 +31,7 @@ groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
 world.addBody(groundBody);
 
 const wallThickness = 1;
-const wallHeight = 10;
+const wallHeight = 100;
 
 const wallPositions = [
     { x: 0, y: wallHeight / 2, z: -50 }, // back
@@ -126,7 +126,6 @@ let points = 0;
 let timeLeft = 30;
 let gameStarted = false;
 
-// Create HTML elements to display the score and timer
 const scoreElement = document.createElement('div');
 scoreElement.style.position = 'absolute';
 scoreElement.style.top = '10px';
