@@ -29,7 +29,7 @@ jobs:
         run: |
           git config --global user.email "deklerk@dkbasson.com"
           git config --global user.name "Deklerk Basson"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/DKBasson/ThreeJS-Earth.git
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/DKBasson/ThreeJS-Earth.git
 
       - name: Deploy to GitHub Pages
-        run: gh-pages -d dist -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/DKBasson/ThreeJS-Earth.git
+        run: gh-pages -d dist -r https://x-access-token:${{ secrets.PAT }}@github.com/DKBasson/ThreeJS-Earth.git
